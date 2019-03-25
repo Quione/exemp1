@@ -1,0 +1,44 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Lista de CEPs</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Estado</ion-label>
+        <ion-input type="text" value="" maxlength="2" autofocus [(ngModel)]="txtEstado"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cidade</ion-label>
+        <ion-input type="text"  value="" [(ngModel)]="txtCidade"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label floating>Logradouro</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="txtLogradouro"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button color="primary" block (click)="listaEnderecos()">Localizar</button>
+    </div>
+    <div class="hr mb-5"></div>
+    <ion-item-group *ngFor="let enderecoof enderecos">
+      <ion-item-divider color="light">{{ endereco.cep }}</ion-item-divider>
+      <ion-item>{{ endereco.logradouro }}</ion-item>
+      <ion-item>{{ endereco.bairro }}</ion-item>
+      <ion-item>{{ endereco.localidade }}</ion-item>
+      <ion-item>{{ endereco.uf }}</ion-item>
+      <ion-item>{{ endereco.complemento }}</ion-item>
+      <ion-item>{{ endereco.unidade }}</ion-item>
+      <ion-item>{{ endereco.ibge }}</ion-item>
+      <ion-item>{{ endereco.gia }}</ion-item>
+    </ion-item-group>
+    
